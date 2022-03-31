@@ -1,0 +1,17 @@
+// provided a film category, list the actors of all films under that category
+
+
+// we provide two ways of querying SQL
+
+// directly, using QUERY_MYSQL
+
+// example
+
+
+
+// indirectly, using READ_MYSQL that reads the tables we want and we process
+// those as we like
+
+// example
+
+
