@@ -5,13 +5,27 @@
 
 // directly, using QUERY_MYSQL
 
-// example
-
+actors_per_category_direct(category: string):= {
+ select first_name, last_name
+ from query_mysql("filmdb", "select a.first_name, a.last_name, c.name from actor a inner join film_actor fa on fa.actor_id=a.actor_id inner join film f on fa.film_id=f.film_id inner join film_category fc on fc.film_id=f.film_id inner join category c on c.category_id=fc.category_id")
+ where name=category
+}
 
 
 // indirectly, using READ_MYSQL that reads the tables we want and we process
 // those as we like
 
-// example
+actors_per_category_indirect(category: string):= {
+ actor:=read_mysql("filmdb", "actor")
+ film_actor:=read_mysql("filmdb", "film_actor")
+ film:=read_mysql("filmdb", "film")
+ film_category:=read_mysql("filmdb", "film_category")
+ category:=read_mysql("filmdb", "category")
+ select a.first_name, a.last_name
+ from actor as a, film_actor as fa, film as f, film_category as fc, category as c 
+ where fa.actor_id=a.actor_id and fa.film_id=f.film_id and fc.film_id=f.film_id and c.category_id=fc.category_id
+}
+
+
 
 
