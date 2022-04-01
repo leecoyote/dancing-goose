@@ -1,0 +1,10 @@
+star_treks := READ_JSON("https://api.themoviedb.org/3/search/movie?api_key=secret('tmdb_api_key')&language=en-US&page=1&include_adult=false&query=star%20trek")
+
+fetch_star_treks() := 
+SELECT
+    original_title AS title,
+    popularity,
+    YEAR(TO_DATE(release_date, "yyyy-MM-dd")) AS released
+FROM star_treks.results
+ORDER BY popularity DESC
+

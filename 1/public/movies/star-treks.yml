@@ -1,0 +1,15 @@
+raw: 0.9
+endpoint: GET
+metadata:
+  title: star trek
+  description: get data regarding movies about star trek
+  tags:
+    - stars  
+code: rql
+codeFile: code.rql
+declaration: fetch_star_treks
+security: 
+  public: true
+format: json
+computeClass: normal
+enabled: true
