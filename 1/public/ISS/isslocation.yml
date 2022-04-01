@@ -10,7 +10,7 @@ codeFile: code.rql
 declaration: isslocation
 format: json
 security:
-  public: true
+  public: false
   scopes:
     - iss
 computeClass: normal
