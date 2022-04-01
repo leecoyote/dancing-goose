@@ -5,7 +5,7 @@ code: rql
 codeFile: code.rql
 format: json
 computeClass: normal
-enabled: true
+enabled: false
 declaration: actors_per_category_indirect
 metadata:
   title: fetch actors per category via READ_MYSQL
