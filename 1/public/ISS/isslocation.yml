@@ -11,5 +11,7 @@ declaration: isslocation
 format: json
 security:
   public: true
+  scopes:
+    - iss
 computeClass: normal
 enabled: true
