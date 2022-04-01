@@ -1,5 +1,10 @@
-my_tmdb_secret() := secret("tmdb_api_key")
-star_treks := READ_JSON("https://api.themoviedb.org/3/search/movie?api_key=" + my_tmdb_secret() + "&language=en-US&page=1&include_adult=false&query=star%20trek")
+star_treks := READ_JSON("https://api.themoviedb.org/3/search/movie", http_args:= [
+    ("api_key", secret("tmdb_api_key")),
+    ("language", "en-US"),
+    ("page", "1"),
+    ("include_adult", "false"),
+    ("query", "star trek")
+])
 
 fetch_star_treks() := 
 SELECT
@@ -8,4 +13,3 @@ SELECT
     YEAR(TO_DATE(release_date, "yyyy-MM-dd")) AS released
 FROM star_treks.results
 ORDER BY popularity DESC
-
