@@ -5,7 +5,7 @@ Demonstrating use of 'secret' datasource, which is used to store the TMDB
 
 The folder contains the following files;
 
-- README.md, This file
+- README.md, current file
 - code.rql, the file containing the RQL specifications
 - star-treks.yml, specifies endpoint for displaying results after a TMDB query
 
