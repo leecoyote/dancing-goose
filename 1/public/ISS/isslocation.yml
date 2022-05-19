@@ -14,5 +14,5 @@ metadata:
     - ISS
 security:
   public: false
-  scopies:
+  scopes:
     - iss
